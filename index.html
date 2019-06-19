@@ -178,7 +178,7 @@
 </nav>
 
   <p>
-  &copy; 2018.
+  &copy; 2019.
   <a href="/LICENSE.md">MIT License.</a>
 </p>
 
@@ -192,6 +192,46 @@
 
   
 
+  
+  <article class="post-body">
+    <h2 class="post-title">
+      <a href="/linux/2019/06/19/scheduling-kdeconnect.html">
+        Scheduling kdeconnect
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">19 Jun 2019</span>
+  <span class="post-categories">
+    
+      &bull;
+
+      
+      
+      
+
+      
+        Linux
+      
+    
+  </span>
+</div>
+
+    
+      <p>I have a smartwatch and use kdeconnect to forward desktop notifications to my phone.  I do not want to receive these notifications before or after hours (computer stays on and we’re a 24/7 operation).  You can manipulate kdeconnect from the command line with kdeconnect-cli, but there is no mechanism for scheduling alerts on and off.  My first test used the ‘–pair’ and ‘–unpair’ commands found in kdeconnect-cli, but this deletes all of your in-app settings (i.e. what features are enabled).  This is less than ideal.  This is the solution I come up with.  It involves using crontab to kill the kdeconnect daemon (/usr/libexec/kdeconnectd), then restart the daemon, then run the ‘kdeconnect-cli –refresh’ command.  There is a bit of a delay needed between starting the daemon and the refresh command.</p>
+
+
+    
+
+    
+      
+      
+      
+
+      
+        <a href="/linux/2019/06/19/scheduling-kdeconnect.html">More &hellip;</a>
+      
+    
+  </article>
   
   <article class="post-body">
     <h2 class="post-title">
