@@ -11,7 +11,7 @@
 
   <title>
     
-      Google Search &middot; Steven's Blog
+      ms-gamebarservices link pop-up error &middot; Steven's Blog
     
   </title>
 
@@ -35,7 +35,7 @@
 </head>
 
 
-  <body class="search">
+  <body class="post">
 
     <div id="sidebar">
   <header>
@@ -200,25 +200,153 @@
 
     <main class="container">
       <header>
-  <h1 class="page-title"><label for="search-bar">Google Search</label></h1>
+  <h1 class="post-title">ms-gamebarservices link pop-up error</h1>
 </header>
 <div class="content">
-  <form action="https://google.com/search" class="search-form">
-  <div class="search-row">
-    <input id="search-bar" type="search" name="q" />
+  <div class="post-meta">
+  <span class="post-date">25 Oct 2019</span>
+  <span class="post-categories">
+    
+      &bull;
 
-    
-    
-    
-    
-    
-    <input name="sitesearch" type="hidden"
-           value="sclarkso.github.io" />
+      
+      
+      
 
-    <input type="submit" value="Search" />
-  </div>
-</form>
+      
+        Tech
+      
+    
+  </span>
 </div>
+
+  <div class="post-body">
+    <p>I was recently plagued with the Windows 10 ms-gamebarservice link pop-up.  It takes focus and minimizes whatever you’re doing (it was multiplayer FPS’s for me).</p>
+
+<p><img src="/assets/images/ms-gamebar-bs.PNG" alt="ms-gamebarservices" /></p>
+
+<p>I tried most of the other ‘fixes’ on the web, and none worked.  What did eventually end up working for me was removing XboxGamingOverlay.  I did some digging with <a href="https://docs.microsoft.com/en-us/sysinternals/downloads/procmon">procmon</a> and found only that app and discord were trying to access the API that seemed to cause the popup.  Killing discord didn’t stop it, but removing the XboxGamingOverlay seemed to.  This hasn’t seemed to cause any issues with using the Game Pass for PC (playing Outer Worlds), though could potentially cause issues if you actually use the Windows Game Bar?</p>
+
+<p>Instructions:</p>
+
+<ul>
+  <li>Open Powershell as Administrator
+    <ul>
+      <li>Click Start Menu, Start typing ‘Powershell’, on the right click “Run As Administrator:</li>
+      <li><img src="/assets/images/ps1.png" alt="screenshot" /></li>
+    </ul>
+  </li>
+  <li>In Powershell run the following 2 commands:
+     PS C:\Users\user&gt; get-appxpackage Microsoft.XboxGamingOverlay | remove-appxpackage
+     PS C:\Users\user&gt; get-appxpackage Microsoft.XboxGameOverlay | remove-appxpackage</li>
+  <li>Reboot for good measure.</li>
+</ul>
+
+    
+
+
+
+<div class="post-tags">
+  
+    
+    <a href="/tags.html#tech">
+    
+      <span class="icon">
+        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+</svg>
+      </span>&nbsp;<span class="tag-name">tech</span>
+    </a>
+  
+    
+    <a href="/tags.html#tips">
+    
+      <span class="icon">
+        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+</svg>
+      </span>&nbsp;<span class="tag-name">tips</span>
+    </a>
+  
+</div>
+  </div>
+
+  
+  <section class="comments">
+    <h2>Comments</h2>
+    
+  <div id="disqus_thread">
+    <button class="disqus-load" onClick="loadDisqusComments()">
+      Load Comments
+    </button>
+  </div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW
+  *  TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:s
+  *  https://disqus.com/admin/universalcode/#configuration-variables
+  */
+  var disqus_config = function () {
+    this.page.url = "https://sclarkso.github.io/tech/2019/10/25/ms-gamebarservices-error.html";
+    this.page.identifier = "" ||
+                           "https://sclarkso.github.io/tech/2019/10/25/ms-gamebarservices-error.html";
+  }
+  function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//sclarkso.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  </script>
+  <noscript>
+    Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript">comments powered by Disqus</a>.
+  </noscript>
+
+
+
+  </section>
+
+  <section class="related">
+  <h2>Related Posts</h2>
+  <ul class="posts-list">
+    
+      <li>
+        <h3>
+          <a href="/linux/2019/06/19/scheduling-kdeconnect.html">
+            Scheduling kdeconnect
+            <small>19 Jun 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/tech/2018/04/23/worlds-tiniest-openshift-cluster.html">
+            World's Tiniest OpenShift cluster, with a Mobile twist: Part 1
+            <small>23 Apr 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2018/04/04/variable-expansion-in-sudo-over-ssh-with-passwords.html">
+            Variable Expansion in Sudo over SSH with Passwords
+            <small>04 Apr 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</section>
+
+</div>
+
     </main>
 
     <!-- Optional footer content -->
