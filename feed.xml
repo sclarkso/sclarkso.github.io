@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://sclarkso.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://sclarkso.github.io/" rel="alternate" type="text/html" /><updated>2019-10-25T20:51:54-05:00</updated><id>https://sclarkso.github.io/feed.xml</id><title type="html">Steven’s Blog</title><subtitle>Solutions to weird problems I've encountered and posts on interesting technology I'm experimenting with.</subtitle><author><name>Steven Clarkson</name></author><entry><title type="html">ms-gamebarservices link pop-up error</title><link href="https://sclarkso.github.io/tech/2019/10/25/ms-gamebarservices-error.html" rel="alternate" type="text/html" title="ms-gamebarservices link pop-up error" /><published>2019-10-25T00:00:00-05:00</published><updated>2019-10-25T00:00:00-05:00</updated><id>https://sclarkso.github.io/tech/2019/10/25/ms-gamebarservices-error</id><content type="html" xml:base="https://sclarkso.github.io/tech/2019/10/25/ms-gamebarservices-error.html">&lt;p&gt;I was recently plagued with the Windows 10 ms-gamebarservice link pop-up.  It takes focus and minimizes whatever you’re doing (it was multiplayer FPS’s for me).&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://sclarkso.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://sclarkso.github.io/" rel="alternate" type="text/html" /><updated>2019-10-25T20:57:45-05:00</updated><id>https://sclarkso.github.io/feed.xml</id><title type="html">Steven’s Blog</title><subtitle>Solutions to weird problems I've encountered and posts on interesting technology I'm experimenting with.</subtitle><author><name>Steven Clarkson</name></author><entry><title type="html">ms-gamebarservices link pop-up error</title><link href="https://sclarkso.github.io/tech/2019/10/25/ms-gamebarservices-error.html" rel="alternate" type="text/html" title="ms-gamebarservices link pop-up error" /><published>2019-10-25T00:00:00-05:00</published><updated>2019-10-25T00:00:00-05:00</updated><id>https://sclarkso.github.io/tech/2019/10/25/ms-gamebarservices-error</id><content type="html" xml:base="https://sclarkso.github.io/tech/2019/10/25/ms-gamebarservices-error.html">&lt;p&gt;I was recently plagued with the Windows 10 ms-gamebarservice link pop-up.  It takes focus and minimizes whatever you’re doing (it was multiplayer FPS’s for me).&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/ms-gamebar-bs.PNG&quot; alt=&quot;ms-gamebarservices&quot; /&gt;&lt;/p&gt;
 
@@ -13,11 +13,14 @@
       &lt;li&gt;&lt;img src=&quot;/assets/images/ps1.png&quot; alt=&quot;screenshot&quot; /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;In Powershell run the following 2 commands:
-     &lt;code class=&quot;highlighter-rouge&quot;&gt;
-     PS C:\Users\user&amp;gt; get-appxpackage Microsoft.XboxGamingOverlay | remove-appxpackage
-     PS C:\Users\user&amp;gt; get-appxpackage Microsoft.XboxGameOverlay | remove-appxpackage
-    &lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In Powershell run the following 2 commands:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   PS C:\Users\user&amp;gt; get-appxpackage Microsoft.XboxGamingOverlay | remove-appxpackage
+        
+   PS C:\Users\user&amp;gt; get-appxpackage Microsoft.XboxGameOverlay | remove-appxpackage
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
   &lt;li&gt;Reboot for good measure.&lt;/li&gt;
 &lt;/ul&gt;</content><author><name>Steven Clarkson</name></author><category term="tech" /><category term="tips" /><summary type="html">I was recently plagued with the Windows 10 ms-gamebarservice link pop-up. It takes focus and minimizes whatever you’re doing (it was multiplayer FPS’s for me).</summary></entry><entry><title type="html">Scheduling kdeconnect</title><link href="https://sclarkso.github.io/linux/2019/06/19/scheduling-kdeconnect.html" rel="alternate" type="text/html" title="Scheduling kdeconnect" /><published>2019-06-19T00:00:00-05:00</published><updated>2019-06-19T00:00:00-05:00</updated><id>https://sclarkso.github.io/linux/2019/06/19/scheduling-kdeconnect</id><content type="html" xml:base="https://sclarkso.github.io/linux/2019/06/19/scheduling-kdeconnect.html">&lt;p&gt;I have a smartwatch and use kdeconnect to forward desktop notifications to my phone.  I do not want to receive these notifications before or after hours (computer stays on and we’re a 24/7 operation).&lt;/p&gt;
 
