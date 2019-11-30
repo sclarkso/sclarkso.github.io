@@ -11,7 +11,7 @@
 
   <title>
     
-      ms-gamebarservices link pop-up error &middot; Steven's Blog
+      Razer Mouse Consistently Disrupts Windows Sleep &middot; Steven's Blog
     
   </title>
 
@@ -200,11 +200,11 @@
 
     <main class="container">
       <header>
-  <h1 class="post-title">ms-gamebarservices link pop-up error</h1>
+  <h1 class="post-title">Razer Mouse Consistently Disrupts Windows Sleep</h1>
 </header>
 <div class="content">
   <div class="post-meta">
-  <span class="post-date">25 Oct 2019</span>
+  <span class="post-date">29 Nov 2019</span>
   <span class="post-categories">
     
       &bull;
@@ -221,31 +221,15 @@
 </div>
 
   <div class="post-body">
-    <p>I was recently plagued with the Windows 10 ms-gamebarservice link pop-up.  It takes focus and minimizes whatever you’re doing (it was multiplayer FPS’s for me).</p>
+    <p>I recently got a new Razer Basilisk mouse as I thought a clutch would be fun to use in FPS games.  The mouse is great other than the fact that it CONSTANTLY woke up my windows 10 pc.  I tried disabling ‘Allow this device to wake computer’ in device manager, but it still woke it up almost as soon as I put the computer to sleep.  It turns out the device registers as a mouse AND keyboard (for the extra buttons).</p>
 
-<p><img src="/assets/images/ms-gamebar-bs.PNG" alt="ms-gamebarservices" /></p>
+<p>The easiest way to track down what devices to disable is to unplug everything you don’t want to use to wake up the computer, and then uncheck “allow this device to wake computer” on all other devices.</p>
 
-<p>I tried most of the other ‘fixes’ on the web, and none worked.  What did eventually end up working for me was removing XboxGamingOverlay.  I did some digging with <a href="https://docs.microsoft.com/en-us/sysinternals/downloads/procmon">procmon</a> and found only that app and discord were trying to access the API that seemed to cause the popup.  Killing discord didn’t stop it, but removing the XboxGamingOverlay seemed to.  This hasn’t seemed to cause any issues with using the Game Pass for PC (playing Outer Worlds), though could potentially cause issues if you actually use the Windows Game Bar?</p>
+<p>For the Basilisk, these are the 3 devices you need to uncheck:</p>
 
-<p>Instructions:</p>
+<p><img src="/assets/images/dev-man.PNG" alt="device-manager" /></p>
 
-<ul>
-  <li>Open Powershell as Administrator
-    <ul>
-      <li>Click Start Menu, Start typing ‘Powershell’, on the right click “Run As Administrator:</li>
-      <li><img src="/assets/images/ps1.png" alt="screenshot" /></li>
-    </ul>
-  </li>
-  <li>
-    <p>In Powershell run the following 2 commands:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   PS C:\Users\user&gt; get-appxpackage Microsoft.XboxGamingOverlay | remove-appxpackage
-        
-   PS C:\Users\user&gt; get-appxpackage Microsoft.XboxGameOverlay | remove-appxpackage
-</code></pre></div>    </div>
-  </li>
-  <li>Reboot for good measure.</li>
-</ul>
+<p><img src="/assets/images/dev-man1.PNG" alt="allow-wake" /></p>
 
     
 
@@ -296,9 +280,9 @@
   *  https://disqus.com/admin/universalcode/#configuration-variables
   */
   var disqus_config = function () {
-    this.page.url = "https://sclarkso.github.io/tech/2019/10/25/ms-gamebarservices-error.html";
+    this.page.url = "https://sclarkso.github.io/tech/2019/11/29/razer-mouse-windows-sleep.html";
     this.page.identifier = "" ||
-                           "https://sclarkso.github.io/tech/2019/10/25/ms-gamebarservices-error.html";
+                           "https://sclarkso.github.io/tech/2019/11/29/razer-mouse-windows-sleep.html";
   }
   function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');
@@ -322,9 +306,9 @@
     
       <li>
         <h3>
-          <a href="/tech/2019/11/29/razer-mouse-windows-sleep.html">
-            Razer Mouse Consistently Disrupts Windows Sleep
-            <small>29 Nov 2019</small>
+          <a href="/tech/2019/10/25/ms-gamebarservices-error.html">
+            ms-gamebarservices link pop-up error
+            <small>25 Oct 2019</small>
           </a>
         </h3>
       </li>
