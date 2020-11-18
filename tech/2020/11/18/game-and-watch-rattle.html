@@ -11,7 +11,7 @@
 
   <title>
     
-      Variable Expansion in Sudo over SSH with Passwords &middot; Steven's Blog
+      Nintendo 35th Anniversary Game and Watch Rattle &middot; Steven's Blog
     
   </title>
 
@@ -200,23 +200,30 @@
 
     <main class="container">
       <header>
-  <h1 class="post-title">Variable Expansion in Sudo over SSH with Passwords</h1>
+  <h1 class="post-title">Nintendo 35th Anniversary Game and Watch Rattle</h1>
 </header>
 <div class="content">
   <div class="post-meta">
-  <span class="post-date">04 Apr 2018</span>
+  <span class="post-date">18 Nov 2020</span>
   <span class="post-categories">
+    
+      &bull;
+
+      
+      
+      
+
+      
+        Tech
+      
     
   </span>
 </div>
 
   <div class="post-body">
-    <p>The trick is to set the ssh command as a variable so that the expansion happens at the correct time.</p>
+    <p>I recently got my new Game and Watch.  After using it for a few days I noticed it had a rattle.  I dissassembled it to see if I could repair it.  It turned out to be the power button.  So I left it as it was.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
- <span class="nv">cmd</span><span class="o">=</span><span class="s2">"echo XXXXXXXX | sudo -S mongo 127.0.0.1/admin -u admin -p </span><span class="nv">$pass</span><span class="s2"> --eval 'printjson(rs.conf())'"</span>
- ssh <span class="nt">-q</span> <span class="nt">-o</span> <span class="nv">BatchMode</span><span class="o">=</span><span class="nb">yes</span> <span class="nt">-o</span> <span class="nv">ConnectTimeout</span><span class="o">=</span>10 <span class="nt">-o</span> <span class="nv">StrictHostKeyChecking</span><span class="o">=</span>no user@host <span class="nv">$cmd</span>
-</code></pre></div></div>
+<p><img src="/assets/images/gaw.PNG" alt="allow-wake" /></p>
 
     
 
@@ -225,14 +232,14 @@
 <div class="post-tags">
   
     
-    <a href="/tags.html#ssh">
+    <a href="/tags.html#tech">
     
       <span class="icon">
         <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
     <path d="M0 0h24v24H0z" fill="none"/>
     <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
 </svg>
-      </span>&nbsp;<span class="tag-name">ssh</span>
+      </span>&nbsp;<span class="tag-name">tech</span>
     </a>
   
     
@@ -267,9 +274,9 @@
   *  https://disqus.com/admin/universalcode/#configuration-variables
   */
   var disqus_config = function () {
-    this.page.url = "https://sclarkso.github.io/2018/04/04/variable-expansion-in-sudo-over-ssh-with-passwords.html";
+    this.page.url = "https://sclarkso.github.io/tech/2020/11/18/game-and-watch-rattle.html";
     this.page.identifier = "" ||
-                           "https://sclarkso.github.io/2018/04/04/variable-expansion-in-sudo-over-ssh-with-passwords.html";
+                           "https://sclarkso.github.io/tech/2020/11/18/game-and-watch-rattle.html";
   }
   function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');
@@ -293,15 +300,6 @@
     
       <li>
         <h3>
-          <a href="/tech/2020/11/18/game-and-watch-rattle.html">
-            Nintendo 35th Anniversary Game and Watch Rattle
-            <small>18 Nov 2020</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
           <a href="/tech/2019/11/29/razer-mouse-windows-sleep.html">
             Razer Mouse Consistently Disrupts Windows Sleep
             <small>29 Nov 2019</small>
@@ -314,6 +312,15 @@
           <a href="/tech/2019/10/25/ms-gamebarservices-error.html">
             ms-gamebarservices link pop-up error
             <small>25 Oct 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/linux/2019/06/19/scheduling-kdeconnect.html">
+            Scheduling kdeconnect
+            <small>19 Jun 2019</small>
           </a>
         </h3>
       </li>
