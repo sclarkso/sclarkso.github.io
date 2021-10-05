@@ -204,7 +204,7 @@
   <article class="post-body">
     <h2 class="post-title">
       <a href="/tech/2021/10/05/quest-2-timezone-change-without-factory-reset.html">
-        Change Oculus Quest 2 Timezone Without a Factory Reset Using ADB
+        Change Quest 2 Timezone without Factory Reset using ADB
       </a>
     </h2>
     <div class="post-meta">
@@ -227,27 +227,6 @@
     
       <p>The timezone on my new Quest 2 was wrong.  This didn’t affect games, but it was annoying.  Oculus support says you have to factory reset the device in order to change the time zone.  I refuse to do that, so did some digging.  It turns out you can just update it using ADB.</p>
 
-<p>Follow <a href="https://sidequestvr.com/setup-howto">this guide</a> to setup sidequest if you haven’t already or don’t know how.  If you already have adb enabled on your device and the drivers installed, you can skip this step.</p>
-
-<p>If you’re using sidequest, click the “Run ADB Commands” icon in the upper right and choose “Custom Command”.</p>
-
-<p><img src="/assets/images/sq1.png" alt="sq1" /></p>
-
-<p>Paste this command:</p>
-
-<p><code class="highlighter-rouge">adb shell service call alarm 3 s16 America/Chicago</code></p>
-
-<p>Replacing “America/Chicago” with your timezone from <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">this list</a></p>
-
-<p>The output should be:</p>
-
-<p><code class="highlighter-rouge">Result: Parcel(00000000    '....')</code></p>
-
-<p><img src="/assets/images/sq2.png" alt="sq2" /></p>
-
-<p>Alternatively you can use adb from the command line (if you know what you’re doing) and it works the same way.  I assume it would also be possible to run the command directly on the device if you had a terminal emulator installed, but I haven’t tested that.</p>
-
-<p>I have tested and this persisted a reboot.</p>
 
     
 
@@ -256,6 +235,8 @@
       
       
 
+      
+        <a href="/tech/2021/10/05/quest-2-timezone-change-without-factory-reset.html">More &hellip;</a>
       
     
   </article>
