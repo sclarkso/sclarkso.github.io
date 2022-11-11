@@ -1,135 +1,135 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://sclarkso.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://sclarkso.github.io/" rel="alternate" type="text/html" /><updated>2021-10-04T20:16:10-05:00</updated><id>https://sclarkso.github.io/feed.xml</id><title type="html">Steven’s Blog</title><subtitle>Solutions to weird problems I've encountered and posts on interesting technology I'm experimenting with.</subtitle><author><name>Steven Clarkson</name></author><entry><title type="html">Change Quest 2 Timezone without Factory Reset using ADB</title><link href="https://sclarkso.github.io/tech/2021/10/05/quest-2-timezone-change-without-factory-reset.html" rel="alternate" type="text/html" title="Change Quest 2 Timezone without Factory Reset using ADB" /><published>2021-10-05T00:00:00-05:00</published><updated>2021-10-05T00:00:00-05:00</updated><id>https://sclarkso.github.io/tech/2021/10/05/quest-2-timezone-change-without-factory-reset</id><content type="html" xml:base="https://sclarkso.github.io/tech/2021/10/05/quest-2-timezone-change-without-factory-reset.html">&lt;p&gt;The timezone on my new Quest 2 was wrong.  This didn’t affect games, but it was annoying.  Oculus support says you have to factory reset the device in order to change the time zone.  I refuse to do that, so did some digging.  It turns out you can just update it using ADB.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://sclarkso.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://sclarkso.github.io/" rel="alternate" type="text/html" /><updated>2022-11-11T00:55:30-06:00</updated><id>https://sclarkso.github.io/feed.xml</id><title type="html">Steven’s Blog</title><subtitle>Solutions to weird problems I&apos;ve encountered and posts on interesting technology I&apos;m experimenting with.</subtitle><author><name>Steven Clarkson</name></author><entry><title type="html">Change Quest 2 Timezone without Factory Reset using ADB</title><link href="https://sclarkso.github.io/tech/2021/10/05/quest-2-timezone-change-without-factory-reset.html" rel="alternate" type="text/html" title="Change Quest 2 Timezone without Factory Reset using ADB" /><published>2021-10-05T00:00:00-05:00</published><updated>2021-10-05T00:00:00-05:00</updated><id>https://sclarkso.github.io/tech/2021/10/05/quest-2-timezone-change-without-factory-reset</id><content type="html" xml:base="https://sclarkso.github.io/tech/2021/10/05/quest-2-timezone-change-without-factory-reset.html"><![CDATA[<p>The timezone on my new Quest 2 was wrong.  This didn’t affect games, but it was annoying.  Oculus support says you have to factory reset the device in order to change the time zone.  I refuse to do that, so did some digging.  It turns out you can just update it using ADB.</p>
 
-&lt;p&gt;Follow &lt;a href=&quot;https://sidequestvr.com/setup-howto&quot;&gt;this guide&lt;/a&gt; to setup sidequest if you haven’t already or don’t know how.  If you already have adb enabled on your device and the drivers installed, you can skip this step.&lt;/p&gt;
+<p>Follow <a href="https://sidequestvr.com/setup-howto">this guide</a> to setup sidequest if you haven’t already or don’t know how.  If you already have adb enabled on your device and the drivers installed, you can skip this step.</p>
 
-&lt;p&gt;If you’re using sidequest, click the “Run ADB Commands” icon in the upper right and choose “Custom Command”.&lt;/p&gt;
+<p>If you’re using sidequest, click the “Run ADB Commands” icon in the upper right and choose “Custom Command”.</p>
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/sq1.png&quot; alt=&quot;sq1&quot; /&gt;&lt;/p&gt;
+<p><img src="/assets/images/sq1.png" alt="sq1" /></p>
 
-&lt;p&gt;Paste this command:&lt;/p&gt;
+<p>Paste this command:</p>
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;adb shell service call alarm 3 s16 America/Chicago&lt;/code&gt;&lt;/p&gt;
+<p><code class="language-plaintext highlighter-rouge">adb shell service call alarm 3 s16 America/Chicago</code></p>
 
-&lt;p&gt;Replacing “America/Chicago” with your timezone from &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_tz_database_time_zones&quot;&gt;this list&lt;/a&gt;&lt;/p&gt;
+<p>Replacing “America/Chicago” with your timezone from <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">this list</a></p>
 
-&lt;p&gt;The output should be:&lt;/p&gt;
+<p>The output should be:</p>
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Result: Parcel(00000000    '....')&lt;/code&gt;&lt;/p&gt;
+<p><code class="language-plaintext highlighter-rouge">Result: Parcel(00000000    '....')</code></p>
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/sq2.png&quot; alt=&quot;sq2&quot; /&gt;&lt;/p&gt;
+<p><img src="/assets/images/sq2.png" alt="sq2" /></p>
 
-&lt;p&gt;Alternatively you can use adb from the command line (if you know what you’re doing) and it works the same way.  I assume it would also be possible to run the command directly on the device if you had a terminal emulator installed, but I haven’t tested that.&lt;/p&gt;
+<p>Alternatively you can use adb from the command line (if you know what you’re doing) and it works the same way.  I assume it would also be possible to run the command directly on the device if you had a terminal emulator installed, but I haven’t tested that.</p>
 
-&lt;p&gt;I have tested and this persisted a reboot.&lt;/p&gt;</content><author><name>Steven Clarkson</name></author><category term="tech" /><category term="tips" /><summary type="html">The timezone on my new Quest 2 was wrong. This didn’t affect games, but it was annoying. Oculus support says you have to factory reset the device in order to change the time zone. I refuse to do that, so did some digging. It turns out you can just update it using ADB.</summary></entry><entry><title type="html">Nintendo 35th Anniversary Game and Watch Rattle</title><link href="https://sclarkso.github.io/tech/2020/11/17/game-and-watch-rattle.html" rel="alternate" type="text/html" title="Nintendo 35th Anniversary Game and Watch Rattle" /><published>2020-11-17T00:00:00-06:00</published><updated>2020-11-17T00:00:00-06:00</updated><id>https://sclarkso.github.io/tech/2020/11/17/game-and-watch-rattle</id><content type="html" xml:base="https://sclarkso.github.io/tech/2020/11/17/game-and-watch-rattle.html">&lt;p&gt;I recently got my new Game and Watch.  After using it for a few days I noticed it had a rattle.  I dissassembled it to see if I could repair it.  It turned out to be the power button.  So I left it as it was.&lt;/p&gt;
+<p>I have tested and this persisted a reboot.</p>]]></content><author><name>Steven Clarkson</name></author><category term="Tech" /><category term="tech" /><category term="tips" /><summary type="html"><![CDATA[The timezone on my new Quest 2 was wrong. This didn’t affect games, but it was annoying. Oculus support says you have to factory reset the device in order to change the time zone. I refuse to do that, so did some digging. It turns out you can just update it using ADB.]]></summary></entry><entry><title type="html">Nintendo 35th Anniversary Game and Watch Rattle</title><link href="https://sclarkso.github.io/tech/2020/11/17/game-and-watch-rattle.html" rel="alternate" type="text/html" title="Nintendo 35th Anniversary Game and Watch Rattle" /><published>2020-11-17T00:00:00-06:00</published><updated>2020-11-17T00:00:00-06:00</updated><id>https://sclarkso.github.io/tech/2020/11/17/game-and-watch-rattle</id><content type="html" xml:base="https://sclarkso.github.io/tech/2020/11/17/game-and-watch-rattle.html"><![CDATA[<p>I recently got my new Game and Watch.  After using it for a few days I noticed it had a rattle.  I dissassembled it to see if I could repair it.  It turned out to be the power button.  So I left it as it was.</p>
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/gaw.PNG&quot; alt=&quot;game_and_watch&quot; /&gt;&lt;/p&gt;</content><author><name>Steven Clarkson</name></author><category term="tech" /><category term="tips" /><summary type="html">I recently got my new Game and Watch. After using it for a few days I noticed it had a rattle. I dissassembled it to see if I could repair it. It turned out to be the power button. So I left it as it was.</summary></entry><entry><title type="html">Razer Mouse Consistently Disrupts Windows Sleep</title><link href="https://sclarkso.github.io/tech/2019/11/29/razer-mouse-windows-sleep.html" rel="alternate" type="text/html" title="Razer Mouse Consistently Disrupts Windows Sleep" /><published>2019-11-29T00:00:00-06:00</published><updated>2019-11-29T00:00:00-06:00</updated><id>https://sclarkso.github.io/tech/2019/11/29/razer-mouse-windows-sleep</id><content type="html" xml:base="https://sclarkso.github.io/tech/2019/11/29/razer-mouse-windows-sleep.html">&lt;p&gt;I recently got a new Razer Basilisk mouse as I thought a clutch would be fun to use in FPS games.  The mouse is great other than the fact that it CONSTANTLY woke up my windows 10 pc.  I tried disabling ‘Allow this device to wake computer’ in device manager, but it still woke it up almost as soon as I put the computer to sleep.  It turns out the device registers as a mouse AND keyboard (for the extra buttons).&lt;/p&gt;
+<p><img src="/assets/images/gaw.PNG" alt="game_and_watch" /></p>]]></content><author><name>Steven Clarkson</name></author><category term="Tech" /><category term="tech" /><category term="tips" /><summary type="html"><![CDATA[I recently got my new Game and Watch. After using it for a few days I noticed it had a rattle. I dissassembled it to see if I could repair it. It turned out to be the power button. So I left it as it was.]]></summary></entry><entry><title type="html">Razer Mouse Consistently Disrupts Windows Sleep</title><link href="https://sclarkso.github.io/tech/2019/11/29/razer-mouse-windows-sleep.html" rel="alternate" type="text/html" title="Razer Mouse Consistently Disrupts Windows Sleep" /><published>2019-11-29T00:00:00-06:00</published><updated>2019-11-29T00:00:00-06:00</updated><id>https://sclarkso.github.io/tech/2019/11/29/razer-mouse-windows-sleep</id><content type="html" xml:base="https://sclarkso.github.io/tech/2019/11/29/razer-mouse-windows-sleep.html"><![CDATA[<p>I recently got a new Razer Basilisk mouse as I thought a clutch would be fun to use in FPS games.  The mouse is great other than the fact that it CONSTANTLY woke up my windows 10 pc.  I tried disabling ‘Allow this device to wake computer’ in device manager, but it still woke it up almost as soon as I put the computer to sleep.  It turns out the device registers as a mouse AND keyboard (for the extra buttons).</p>
 
-&lt;p&gt;The easiest way to track down what devices to disable is to unplug everything you don’t want to use to wake up the computer, and then uncheck “allow this device to wake computer” on all other devices.&lt;/p&gt;
+<p>The easiest way to track down what devices to disable is to unplug everything you don’t want to use to wake up the computer, and then uncheck “allow this device to wake computer” on all other devices.</p>
 
-&lt;p&gt;For the Basilisk, these are the 3 devices you need to uncheck:&lt;/p&gt;
+<p>For the Basilisk, these are the 3 devices you need to uncheck:</p>
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/dev-man.PNG&quot; alt=&quot;device-manager&quot; /&gt;&lt;/p&gt;
+<p><img src="/assets/images/dev-man.PNG" alt="device-manager" /></p>
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/dev-man1.PNG&quot; alt=&quot;allow-wake&quot; /&gt;&lt;/p&gt;</content><author><name>Steven Clarkson</name></author><category term="tech" /><category term="tips" /><summary type="html">I recently got a new Razer Basilisk mouse as I thought a clutch would be fun to use in FPS games. The mouse is great other than the fact that it CONSTANTLY woke up my windows 10 pc. I tried disabling ‘Allow this device to wake computer’ in device manager, but it still woke it up almost as soon as I put the computer to sleep. It turns out the device registers as a mouse AND keyboard (for the extra buttons).</summary></entry><entry><title type="html">ms-gamebarservices link pop-up error</title><link href="https://sclarkso.github.io/tech/2019/10/25/ms-gamebarservices-error.html" rel="alternate" type="text/html" title="ms-gamebarservices link pop-up error" /><published>2019-10-25T00:00:00-05:00</published><updated>2019-10-25T00:00:00-05:00</updated><id>https://sclarkso.github.io/tech/2019/10/25/ms-gamebarservices-error</id><content type="html" xml:base="https://sclarkso.github.io/tech/2019/10/25/ms-gamebarservices-error.html">&lt;p&gt;I was recently plagued with the Windows 10 ms-gamebarservice link pop-up.  It takes focus and minimizes whatever you’re doing (it was multiplayer FPS’s for me).&lt;/p&gt;
+<p><img src="/assets/images/dev-man1.PNG" alt="allow-wake" /></p>]]></content><author><name>Steven Clarkson</name></author><category term="Tech" /><category term="tech" /><category term="tips" /><summary type="html"><![CDATA[I recently got a new Razer Basilisk mouse as I thought a clutch would be fun to use in FPS games. The mouse is great other than the fact that it CONSTANTLY woke up my windows 10 pc. I tried disabling ‘Allow this device to wake computer’ in device manager, but it still woke it up almost as soon as I put the computer to sleep. It turns out the device registers as a mouse AND keyboard (for the extra buttons).]]></summary></entry><entry><title type="html">ms-gamebarservices link pop-up error</title><link href="https://sclarkso.github.io/tech/2019/10/25/ms-gamebarservices-error.html" rel="alternate" type="text/html" title="ms-gamebarservices link pop-up error" /><published>2019-10-25T00:00:00-05:00</published><updated>2019-10-25T00:00:00-05:00</updated><id>https://sclarkso.github.io/tech/2019/10/25/ms-gamebarservices-error</id><content type="html" xml:base="https://sclarkso.github.io/tech/2019/10/25/ms-gamebarservices-error.html"><![CDATA[<p>I was recently plagued with the Windows 10 ms-gamebarservice link pop-up.  It takes focus and minimizes whatever you’re doing (it was multiplayer FPS’s for me).</p>
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/ms-gamebar-bs.PNG&quot; alt=&quot;ms-gamebarservices&quot; /&gt;&lt;/p&gt;
+<p><img src="/assets/images/ms-gamebar-bs.PNG" alt="ms-gamebarservices" /></p>
 
-&lt;p&gt;I tried most of the other ‘fixes’ on the web, and none worked.  What did eventually end up working for me was removing XboxGamingOverlay.  I did some digging with &lt;a href=&quot;https://docs.microsoft.com/en-us/sysinternals/downloads/procmon&quot;&gt;procmon&lt;/a&gt; and found only that app and discord were trying to access the API that seemed to cause the popup.  Killing discord didn’t stop it, but removing the XboxGamingOverlay seemed to.  This hasn’t seemed to cause any issues with using the Game Pass for PC (playing Outer Worlds), though could potentially cause issues if you actually use the Windows Game Bar?&lt;/p&gt;
+<p>I tried most of the other ‘fixes’ on the web, and none worked.  What did eventually end up working for me was removing XboxGamingOverlay.  I did some digging with <a href="https://docs.microsoft.com/en-us/sysinternals/downloads/procmon">procmon</a> and found only that app and discord were trying to access the API that seemed to cause the popup.  Killing discord didn’t stop it, but removing the XboxGamingOverlay seemed to.  This hasn’t seemed to cause any issues with using the Game Pass for PC (playing Outer Worlds), though could potentially cause issues if you actually use the Windows Game Bar?</p>
 
-&lt;p&gt;Instructions:&lt;/p&gt;
+<p>Instructions:</p>
 
-&lt;ul&gt;
-  &lt;li&gt;Open Powershell as Administrator
-    &lt;ul&gt;
-      &lt;li&gt;Click Start Menu, Start typing ‘Powershell’, on the right click “Run As Administrator:&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;/assets/images/ps1.png&quot; alt=&quot;screenshot&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;In Powershell run the following 2 commands:&lt;/p&gt;
+<ul>
+  <li>Open Powershell as Administrator
+    <ul>
+      <li>Click Start Menu, Start typing ‘Powershell’, on the right click “Run As Administrator:</li>
+      <li><img src="/assets/images/ps1.png" alt="screenshot" /></li>
+    </ul>
+  </li>
+  <li>
+    <p>In Powershell run the following 2 commands:</p>
 
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   PS C:\Users\user&amp;gt; get-appxpackage Microsoft.XboxGamingOverlay | remove-appxpackage
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   PS C:\Users\user&gt; get-appxpackage Microsoft.XboxGamingOverlay | remove-appxpackage
         
-   PS C:\Users\user&amp;gt; get-appxpackage Microsoft.XboxGameOverlay | remove-appxpackage
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Reboot for good measure.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Steven Clarkson</name></author><category term="tech" /><category term="tips" /><summary type="html">I was recently plagued with the Windows 10 ms-gamebarservice link pop-up. It takes focus and minimizes whatever you’re doing (it was multiplayer FPS’s for me).</summary></entry><entry><title type="html">Scheduling kdeconnect</title><link href="https://sclarkso.github.io/linux/2019/06/19/scheduling-kdeconnect.html" rel="alternate" type="text/html" title="Scheduling kdeconnect" /><published>2019-06-19T00:00:00-05:00</published><updated>2019-06-19T00:00:00-05:00</updated><id>https://sclarkso.github.io/linux/2019/06/19/scheduling-kdeconnect</id><content type="html" xml:base="https://sclarkso.github.io/linux/2019/06/19/scheduling-kdeconnect.html">&lt;p&gt;I have a smartwatch and use kdeconnect to forward desktop notifications to my phone.  I do not want to receive these notifications before or after hours (computer stays on and we’re a 24/7 operation).&lt;/p&gt;
+   PS C:\Users\user&gt; get-appxpackage Microsoft.XboxGameOverlay | remove-appxpackage
+</code></pre></div>    </div>
+  </li>
+  <li>Reboot for good measure.</li>
+</ul>]]></content><author><name>Steven Clarkson</name></author><category term="Tech" /><category term="tech" /><category term="tips" /><summary type="html"><![CDATA[I was recently plagued with the Windows 10 ms-gamebarservice link pop-up. It takes focus and minimizes whatever you’re doing (it was multiplayer FPS’s for me).]]></summary></entry><entry><title type="html">Scheduling kdeconnect</title><link href="https://sclarkso.github.io/linux/2019/06/19/scheduling-kdeconnect.html" rel="alternate" type="text/html" title="Scheduling kdeconnect" /><published>2019-06-19T00:00:00-05:00</published><updated>2019-06-19T00:00:00-05:00</updated><id>https://sclarkso.github.io/linux/2019/06/19/scheduling-kdeconnect</id><content type="html" xml:base="https://sclarkso.github.io/linux/2019/06/19/scheduling-kdeconnect.html"><![CDATA[<p>I have a smartwatch and use kdeconnect to forward desktop notifications to my phone.  I do not want to receive these notifications before or after hours (computer stays on and we’re a 24/7 operation).</p>
 
-&lt;p&gt;You can manipulate kdeconnect from the command line with kdeconnect-cli, but there is no mechanism for scheduling alerts on and off.&lt;/p&gt;
+<p>You can manipulate kdeconnect from the command line with kdeconnect-cli, but there is no mechanism for scheduling alerts on and off.</p>
 
-&lt;p&gt;My first test used the ‘–pair’ and ‘–unpair’ commands found in kdeconnect-cli, but this deletes all of your in-app settings (i.e. what features are enabled).  This is less than ideal.&lt;/p&gt;
+<p>My first test used the ‘–pair’ and ‘–unpair’ commands found in kdeconnect-cli, but this deletes all of your in-app settings (i.e. what features are enabled).  This is less than ideal.</p>
 
-&lt;p&gt;This is the solution I come up with.  It involves using crontab to kill the kdeconnect daemon (/usr/libexec/kdeconnectd), then restart the daemon, then run the ‘kdeconnect-cli –refresh’ command.  There is a bit of a delay needed between starting the daemon and the refresh command.&lt;/p&gt;
+<p>This is the solution I come up with.  It involves using crontab to kill the kdeconnect daemon (/usr/libexec/kdeconnectd), then restart the daemon, then run the ‘kdeconnect-cli –refresh’ command.  There is a bit of a delay needed between starting the daemon and the refresh command.</p>
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;30 7 * * 1,2,3,4,5 /usr/libexec/kdeconnectd
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>30 7 * * 1,2,3,4,5 /usr/libexec/kdeconnectd
 35 7 * * 1,2,3,4,5 /usr/bin/kdeconnect-cli --refresh
 30 17 * * 1,2,3,4,5 /usr/bin/pkill kdeconnectd
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Steven Clarkson</name></author><summary type="html">I have a smartwatch and use kdeconnect to forward desktop notifications to my phone. I do not want to receive these notifications before or after hours (computer stays on and we’re a 24/7 operation).</summary></entry><entry><title type="html">World’s Tiniest OpenShift cluster, with a Mobile twist: Part 1</title><link href="https://sclarkso.github.io/tech/2018/04/23/worlds-tiniest-openshift-cluster.html" rel="alternate" type="text/html" title="World's Tiniest OpenShift cluster, with a Mobile twist: Part 1" /><published>2018-04-23T19:10:48-05:00</published><updated>2018-04-23T19:10:48-05:00</updated><id>https://sclarkso.github.io/tech/2018/04/23/worlds-tiniest-openshift-cluster</id><content type="html" xml:base="https://sclarkso.github.io/tech/2018/04/23/worlds-tiniest-openshift-cluster.html">&lt;p&gt;I decided I needed an OpenShift cluster at home for testing, and instead of doing it the easy way with &lt;a href=&quot;https://docs.openshift.org/latest/minishift/index.html&quot;&gt;Minishift&lt;/a&gt;, I decided I wanted to try to do it the hard way and run it on some sort of development board.   Given that my eventual goal was to run Red Hat’s Mobile Application Platform (&lt;a href=&quot;https://www.redhat.com/en/technologies/mobile/application-platform&quot;&gt;RHMAP&lt;/a&gt;) on the OpenShift on this cluster,  I felt that an ARM-based board was probably outside of my capabilities and I started researching Intel x86 based boards.&lt;/p&gt;
+</code></pre></div></div>]]></content><author><name>Steven Clarkson</name></author><category term="Linux" /><summary type="html"><![CDATA[I have a smartwatch and use kdeconnect to forward desktop notifications to my phone. I do not want to receive these notifications before or after hours (computer stays on and we’re a 24/7 operation).]]></summary></entry><entry><title type="html">World’s Tiniest OpenShift cluster, with a Mobile twist: Part 1</title><link href="https://sclarkso.github.io/tech/2018/04/23/worlds-tiniest-openshift-cluster.html" rel="alternate" type="text/html" title="World’s Tiniest OpenShift cluster, with a Mobile twist: Part 1" /><published>2018-04-23T19:10:48-05:00</published><updated>2018-04-23T19:10:48-05:00</updated><id>https://sclarkso.github.io/tech/2018/04/23/worlds-tiniest-openshift-cluster</id><content type="html" xml:base="https://sclarkso.github.io/tech/2018/04/23/worlds-tiniest-openshift-cluster.html"><![CDATA[<p>I decided I needed an OpenShift cluster at home for testing, and instead of doing it the easy way with <a href="https://docs.openshift.org/latest/minishift/index.html">Minishift</a>, I decided I wanted to try to do it the hard way and run it on some sort of development board.   Given that my eventual goal was to run Red Hat’s Mobile Application Platform (<a href="https://www.redhat.com/en/technologies/mobile/application-platform">RHMAP</a>) on the OpenShift on this cluster,  I felt that an ARM-based board was probably outside of my capabilities and I started researching Intel x86 based boards.</p>
 
-&lt;p&gt;There are many x86 development boards on the market today.  The ones I considered, in no particular order were:&lt;/p&gt;
+<p>There are many x86 development boards on the market today.  The ones I considered, in no particular order were:</p>
 
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://minnowboard.org/&quot;&gt;MinnowBoard&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www.udoo.org/udoo-x86/&quot;&gt;UDOO x86&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://www.up-board.org/&quot;&gt;UP board&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://www.jaguarboard.org/&quot;&gt;Jaguarboard&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li>
+    <p><a href="https://minnowboard.org/">MinnowBoard</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.udoo.org/udoo-x86/">UDOO x86</a></p>
+  </li>
+  <li>
+    <p><a href="http://www.up-board.org/">UP board</a></p>
+  </li>
+  <li>
+    <p><a href="http://www.jaguarboard.org/">Jaguarboard</a></p>
+  </li>
+</ul>
 
-&lt;p&gt;Of the 4, only 2 had models with more than 4GB’s of RAM.  OpenShift recommended specifications are 16Gb’s of RAM per node, so I thought anything less than 4 would be a stretch.  I chose the UP board based on the fact that it was the same size as a raspberry pi, which would give me many more options for cases and accessories, that it was slightly cheaper, and that it was available for shipping to Australia.&lt;/p&gt;
+<p>Of the 4, only 2 had models with more than 4GB’s of RAM.  OpenShift recommended specifications are 16Gb’s of RAM per node, so I thought anything less than 4 would be a stretch.  I chose the UP board based on the fact that it was the same size as a raspberry pi, which would give me many more options for cases and accessories, that it was slightly cheaper, and that it was available for shipping to Australia.</p>
 
-&lt;figure&gt;
-  &lt;a href=&quot;https://sclarkso.github.io/assets/images/20180424_083037.jpg&quot;&gt;&lt;img src=&quot;https://sclarkso.github.io/assets/images/20180424_083037.jpg&quot; alt=&quot;His name is Orangez&quot; /&gt;&lt;/a&gt;
-  &lt;figcaption&gt;The 3 nodes and my assistant&lt;/figcaption&gt;
-&lt;/figure&gt;
+<figure>
+  <a href="https://sclarkso.github.io/assets/images/20180424_083037.jpg"><img src="https://sclarkso.github.io/assets/images/20180424_083037.jpg" alt="His name is Orangez" /></a>
+  <figcaption>The 3 nodes and my assistant</figcaption>
+</figure>
 
-&lt;p&gt;When the boards arrived I &lt;a href=&quot;https://wiki.up-community.org/Bios_Update&quot;&gt;updated their firmware &lt;/a&gt;and installed Red Hat Enterprise Linux (RHEL) 7.4.  I considered using &lt;a href=&quot;https://www.redhat.com/en/resources/enterprise-linux-atomic-host-datasheet&quot;&gt;RHEL Atomic Host &lt;/a&gt;but decided on standard RHEL as I have more experience with it.  Alternatively, you can use Centos 7.4 with identical results.&lt;/p&gt;
+<p>When the boards arrived I <a href="https://wiki.up-community.org/Bios_Update">updated their firmware </a>and installed Red Hat Enterprise Linux (RHEL) 7.4.  I considered using <a href="https://www.redhat.com/en/resources/enterprise-linux-atomic-host-datasheet">RHEL Atomic Host </a>but decided on standard RHEL as I have more experience with it.  Alternatively, you can use Centos 7.4 with identical results.</p>
 
-&lt;figure&gt;
-  &lt;a href=&quot;https://sclarkso.github.io/assets/images/screen-shot-2018-04-24-at-10-04-27-am.png&quot;&gt;&lt;img src=&quot;https://sclarkso.github.io/assets/images/screen-shot-2018-04-24-at-10-04-27-am.png&quot; alt=&quot;firmware installation&quot; /&gt;&lt;/a&gt;
-  &lt;figcaption&gt;Firmware Installation&lt;/figcaption&gt;
-&lt;/figure&gt;
+<figure>
+  <a href="https://sclarkso.github.io/assets/images/screen-shot-2018-04-24-at-10-04-27-am.png"><img src="https://sclarkso.github.io/assets/images/screen-shot-2018-04-24-at-10-04-27-am.png" alt="firmware installation" /></a>
+  <figcaption>Firmware Installation</figcaption>
+</figure>
 
-&lt;p&gt;The &lt;a href=&quot;https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/index&quot;&gt;install&lt;/a&gt; was fairly straightforward, the only customisation was trying to determine the filesystem layout.  I needed storage for the OS and a separate volume group for the container images.  The boards have 32Gb of eMMC storage, so I opted for 5 Gb for the OS, 20 Gb for images, and everything else (/run, /boot, swap) in what was left over.&lt;/p&gt;
+<p>The <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/index">install</a> was fairly straightforward, the only customisation was trying to determine the filesystem layout.  I needed storage for the OS and a separate volume group for the container images.  The boards have 32Gb of eMMC storage, so I opted for 5 Gb for the OS, 20 Gb for images, and everything else (/run, /boot, swap) in what was left over.</p>
 
-&lt;p&gt;I then started and enabled sshd, set static IP’s and hostnames, configured /etc/hosts, and ran subscription-manager (RHEL Licensing) on all the nodes to prepare them for OpenShift installation.  I also created 20 NFS shares on a USB 3 Flash Drive on the ‘Master’ node for OpenShift.&lt;/p&gt;
+<p>I then started and enabled sshd, set static IP’s and hostnames, configured /etc/hosts, and ran subscription-manager (RHEL Licensing) on all the nodes to prepare them for OpenShift installation.  I also created 20 NFS shares on a USB 3 Flash Drive on the ‘Master’ node for OpenShift.</p>
 
-&lt;figure&gt;
-  &lt;a href=&quot;https://sclarkso.github.io/assets/images/20180420_095502.jpg&quot;&gt;&lt;img src=&quot;https://sclarkso.github.io/assets/images/20180420_095502.jpg&quot; alt=&quot;Melvin Hop Shocker IIPA&quot; /&gt;&lt;/a&gt;
-  &lt;figcaption&gt;Mocked up in case&lt;/figcaption&gt;
-&lt;/figure&gt;
+<figure>
+  <a href="https://sclarkso.github.io/assets/images/20180420_095502.jpg"><img src="https://sclarkso.github.io/assets/images/20180420_095502.jpg" alt="Melvin Hop Shocker IIPA" /></a>
+  <figcaption>Mocked up in case</figcaption>
+</figure>
 
-&lt;p&gt;My tiny OpenShift cluster will cost me approximately $2.77 (AUD) to run 24 hours a day for a month.  Each node draws a maximum of 4W, and the switch adds a maximum of 1W.  For comparison, a 3 node cluster built on desktop class workstations with 300W power supplies costs my colleague $192 (AUD) a month.  As a learning platform, that is a significant amount of savings.&lt;/p&gt;
+<p>My tiny OpenShift cluster will cost me approximately $2.77 (AUD) to run 24 hours a day for a month.  Each node draws a maximum of 4W, and the switch adds a maximum of 1W.  For comparison, a 3 node cluster built on desktop class workstations with 300W power supplies costs my colleague $192 (AUD) a month.  As a learning platform, that is a significant amount of savings.</p>
 
-&lt;p&gt;I will cover the OpenShift installation in my next post.&lt;/p&gt;</content><author><name>sclarkso@redhat.com</name></author><category term="tech" /><category term="openshift" /><category term="rhmap" /><summary type="html">I decided I needed an OpenShift cluster at home for testing, and instead of doing it the easy way with Minishift, I decided I wanted to try to do it the hard way and run it on some sort of development board.   Given that my eventual goal was to run Red Hat’s Mobile Application Platform (RHMAP) on the OpenShift on this cluster,  I felt that an ARM-based board was probably outside of my capabilities and I started researching Intel x86 based boards.</summary></entry><entry><title type="html">Variable Expansion in Sudo over SSH with Passwords</title><link href="https://sclarkso.github.io/2018/04/04/variable-expansion-in-sudo-over-ssh-with-passwords.html" rel="alternate" type="text/html" title="Variable Expansion in Sudo over SSH with Passwords" /><published>2018-04-04T19:28:56-05:00</published><updated>2018-04-04T19:28:56-05:00</updated><id>https://sclarkso.github.io/2018/04/04/variable-expansion-in-sudo-over-ssh-with-passwords</id><content type="html" xml:base="https://sclarkso.github.io/2018/04/04/variable-expansion-in-sudo-over-ssh-with-passwords.html">&lt;p&gt;The trick is to set the ssh command as a variable so that the expansion happens at the correct time.&lt;/p&gt;
+<p>I will cover the OpenShift installation in my next post.</p>]]></content><author><name>sclarkso@redhat.com</name></author><category term="Tech" /><category term="tech" /><category term="openshift" /><category term="rhmap" /><summary type="html"><![CDATA[I decided I needed an OpenShift cluster at home for testing, and instead of doing it the easy way with Minishift, I decided I wanted to try to do it the hard way and run it on some sort of development board.   Given that my eventual goal was to run Red Hat’s Mobile Application Platform (RHMAP) on the OpenShift on this cluster,  I felt that an ARM-based board was probably outside of my capabilities and I started researching Intel x86 based boards.]]></summary></entry><entry><title type="html">Variable Expansion in Sudo over SSH with Passwords</title><link href="https://sclarkso.github.io/2018/04/04/variable-expansion-in-sudo-over-ssh-with-passwords.html" rel="alternate" type="text/html" title="Variable Expansion in Sudo over SSH with Passwords" /><published>2018-04-04T19:28:56-05:00</published><updated>2018-04-04T19:28:56-05:00</updated><id>https://sclarkso.github.io/2018/04/04/variable-expansion-in-sudo-over-ssh-with-passwords</id><content type="html" xml:base="https://sclarkso.github.io/2018/04/04/variable-expansion-in-sudo-over-ssh-with-passwords.html"><![CDATA[<p>The trick is to set the ssh command as a variable so that the expansion happens at the correct time.</p>
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
- &lt;span class=&quot;nv&quot;&gt;cmd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;echo XXXXXXXX | sudo -S mongo 127.0.0.1/admin -u admin -p &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$pass&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; --eval 'printjson(rs.conf())'&quot;&lt;/span&gt;
- ssh &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;BatchMode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;yes&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ConnectTimeout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;10 &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;StrictHostKeyChecking&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;no user@host &lt;span class=&quot;nv&quot;&gt;$cmd&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>sclarkso260218</name></author><category term="ssh" /><category term="tips" /><summary type="html">The trick is to set the ssh command as a variable so that the expansion happens at the correct time.</summary></entry><entry><title type="html">Home Assistant - Garage Door Status</title><link href="https://sclarkso.github.io/hass/tech/2018/02/26/home-assistant-garage-door-status.html" rel="alternate" type="text/html" title="Home Assistant - Garage Door Status" /><published>2018-02-26T18:59:47-06:00</published><updated>2018-02-26T18:59:47-06:00</updated><id>https://sclarkso.github.io/hass/tech/2018/02/26/home-assistant-garage-door-status</id><content type="html" xml:base="https://sclarkso.github.io/hass/tech/2018/02/26/home-assistant-garage-door-status.html">&lt;p&gt;In my previous post I went over basically how to get &lt;a href=&quot;https://hass.io&quot;&gt;Home Assistant&lt;/a&gt; up and running.  In this post I will document one of the automations I have written.&lt;/p&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/bin/bash
+ cmd="echo XXXXXXXX | sudo -S mongo 127.0.0.1/admin -u admin -p $pass --eval 'printjson(rs.conf())'"
+ ssh -q -o BatchMode=yes -o ConnectTimeout=10 -o StrictHostKeyChecking=no user@host $cmd
+</code></pre></div></div>]]></content><author><name>sclarkso260218</name></author><category term="ssh" /><category term="tips" /><summary type="html"><![CDATA[The trick is to set the ssh command as a variable so that the expansion happens at the correct time.]]></summary></entry><entry><title type="html">Home Assistant - Garage Door Status</title><link href="https://sclarkso.github.io/hass/tech/2018/02/26/home-assistant-garage-door-status.html" rel="alternate" type="text/html" title="Home Assistant - Garage Door Status" /><published>2018-02-26T18:59:47-06:00</published><updated>2018-02-26T18:59:47-06:00</updated><id>https://sclarkso.github.io/hass/tech/2018/02/26/home-assistant-garage-door-status</id><content type="html" xml:base="https://sclarkso.github.io/hass/tech/2018/02/26/home-assistant-garage-door-status.html"><![CDATA[<p>In my previous post I went over basically how to get <a href="https://hass.io">Home Assistant</a> up and running.  In this post I will document one of the automations I have written.</p>
 
-&lt;p&gt;As a precursor, many of my automations revolve around binary data from sensors.  I use Xiaomi sensors as they’re easy to get, cheap, and easy to integrate into Home Assistant).  They use the &lt;a href=&quot;https://en.wikipedia.org/wiki/Zigbee&quot;&gt;Zigbee&lt;/a&gt; protocol, which allows sensors to communicate back to the gateway via other sensors.  There is a single gateway that is connected to my network and each of the sensors in turn communicates with that gateway.&lt;/p&gt;
+<p>As a precursor, many of my automations revolve around binary data from sensors.  I use Xiaomi sensors as they’re easy to get, cheap, and easy to integrate into Home Assistant).  They use the <a href="https://en.wikipedia.org/wiki/Zigbee">Zigbee</a> protocol, which allows sensors to communicate back to the gateway via other sensors.  There is a single gateway that is connected to my network and each of the sensors in turn communicates with that gateway.</p>
 
-&lt;p&gt;Integrating the Xiaomi gateway is an involved process requiring the use of Xiaomi’s android app in order to get a ‘security’ key for the device.  I followed the HASS (Home Assistant) guide here: &lt;a href=&quot;https://home-assistant.io/components/xiaomi_aqara/&quot;&gt;https://home-assistant.io/components/xiaomi_aqara/&lt;/a&gt;.&lt;/p&gt;
+<p>Integrating the Xiaomi gateway is an involved process requiring the use of Xiaomi’s android app in order to get a ‘security’ key for the device.  I followed the HASS (Home Assistant) guide here: <a href="https://home-assistant.io/components/xiaomi_aqara/">https://home-assistant.io/components/xiaomi_aqara/</a>.</p>
 
-&lt;p&gt;All CLI configuration for HASS is done via YAML files, and follows much of the same formatting as Ansible.  So luckily knowledge of one helps with the other.  I have anxiety about the garage door being left open, so this was one of the first automations I worked on.  It uses a Xiaomi door sensor I have mounted on the arm of the garage door opener.  It’s basically a reed switch with a Zigbee module.  If the magnet in the small module isn’t holding the circuit in the large module closed, then an ‘open’ signal is sent to the gateway and ultimately HASS.&lt;/p&gt;
+<p>All CLI configuration for HASS is done via YAML files, and follows much of the same formatting as Ansible.  So luckily knowledge of one helps with the other.  I have anxiety about the garage door being left open, so this was one of the first automations I worked on.  It uses a Xiaomi door sensor I have mounted on the arm of the garage door opener.  It’s basically a reed switch with a Zigbee module.  If the magnet in the small module isn’t holding the circuit in the large module closed, then an ‘open’ signal is sent to the gateway and ultimately HASS.</p>
 
-&lt;figure&gt;
-  &lt;img src=&quot;https://sclarkso.github.io/assets/images/gd.gif&quot; alt=&quot;Sensors&quot; /&gt;
-  &lt;figcaption&gt;Mounted Sensor just above quick disconnect arm&lt;/figcaption&gt;
-&lt;/figure&gt;
+<figure>
+  <img src="https://sclarkso.github.io/assets/images/gd.gif" alt="Sensors" />
+  <figcaption>Mounted Sensor just above quick disconnect arm</figcaption>
+</figure>
 
-&lt;p&gt;When the garage door opens, I use an automation to send me an alert.  All of this code can be in the main configuration.yaml, or can be separated out into child YAML files, which get included in the configuration.yaml.  I have my system set up like this.&lt;/p&gt;
+<p>When the garage door opens, I use an automation to send me an alert.  All of this code can be in the main configuration.yaml, or can be separated out into child YAML files, which get included in the configuration.yaml.  I have my system set up like this.</p>
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- alias: Garage door open
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- alias: Garage door open
   trigger:
     platform: state
     entity_id: binary_sensor.door_window_sensor_XXXX
@@ -141,30 +141,30 @@
   - service: shell_command.take_garage_image
   - service: notify.pushbullet
     data:
-      message: &quot;Garage Door is OPEN&quot;
+      message: "Garage Door is OPEN"
       data:
         file: /tmp/camera.jpg
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</code></pre></div></div>
 
-&lt;p&gt;Trigger section:&lt;/p&gt;
+<p>Trigger section:</p>
 
-&lt;p&gt;This is the part of the configuration that tells the automation what to ‘listen’ for.  The ‘alias’ is just a friendly name for the automation in the UI.  The ‘platform’ just signifies that this automation works with the state of a sensor, and not for instance when a button is pressed, which is ‘platform: event’.  ‘entity_id’ is HASS’s internal name for the door sensor on the garage door.  ‘from’ and ‘to’ are telling this automation in which direction to fire.  So you could have a different event if the door was opened, versus when it closed.  When the switches open, sometimes they fire back and forth open and closed, which can cause issues with automation, so I put the ‘for’ condition in, just to prevent false alerts.&lt;/p&gt;
+<p>This is the part of the configuration that tells the automation what to ‘listen’ for.  The ‘alias’ is just a friendly name for the automation in the UI.  The ‘platform’ just signifies that this automation works with the state of a sensor, and not for instance when a button is pressed, which is ‘platform: event’.  ‘entity_id’ is HASS’s internal name for the door sensor on the garage door.  ‘from’ and ‘to’ are telling this automation in which direction to fire.  So you could have a different event if the door was opened, versus when it closed.  When the switches open, sometimes they fire back and forth open and closed, which can cause issues with automation, so I put the ‘for’ condition in, just to prevent false alerts.</p>
 
-&lt;p&gt;Action section:&lt;/p&gt;
+<p>Action section:</p>
 
-&lt;p&gt;This is the part of the configuration that tells the automation what to do when the trigger condition is met.  ‘Service’ is basically any sort of automation or action you want to take.  You can send an email, or a text, or call a script.  You can also use jinja to call a service based on additional conditions.  My ‘shell_command.take_garage_image’ service uses the ‘shell_command’ component to run a shell command on the raspberry pi. &lt;/p&gt;
+<p>This is the part of the configuration that tells the automation what to do when the trigger condition is met.  ‘Service’ is basically any sort of automation or action you want to take.  You can send an email, or a text, or call a script.  You can also use jinja to call a service based on additional conditions.  My ‘shell_command.take_garage_image’ service uses the ‘shell_command’ component to run a shell command on the raspberry pi. </p>
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Shell Commands
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Shell Commands
 shell_command:
   pb_send_image: ~/.homeassistant/python_scripts/pb_send_file.py
   take_garage_image: ffmpeg -rtsp_transport tcp -y -i rtsp://10.0.0.233:554/unicast -vframes 2 /tmp/camera.jpg
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</code></pre></div></div>
 
-&lt;p&gt;In this case that command uses FFMPEG to scrape an image from a camera located in the garage, and saves that image to /tmp/camera.jpg.  The next service then sends me that image with pushbullet.  Originally I used another service ‘shell_command.pb_send_image’ that used a python script to send me the image with pushbullet, but in a recent update of HASS, that feature was added into the pushbullet component, but it was good practice to write that script in python nonetheless.&lt;/p&gt;
+<p>In this case that command uses FFMPEG to scrape an image from a camera located in the garage, and saves that image to /tmp/camera.jpg.  The next service then sends me that image with pushbullet.  Originally I used another service ‘shell_command.pb_send_image’ that used a python script to send me the image with pushbullet, but in a recent update of HASS, that feature was added into the pushbullet component, but it was good practice to write that script in python nonetheless.</p>
 
-&lt;p&gt;In addition to this automation, I am using the new ‘alerts’ feature, to send me an ongoing alert if the garage door stays open (which is dismissible in the UI, if I want to dismiss the alert), and when it closes.&lt;/p&gt;
+<p>In addition to this automation, I am using the new ‘alerts’ feature, to send me an ongoing alert if the garage door stays open (which is dismissible in the UI, if I want to dismiss the alert), and when it closes.</p>
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;garage_door:&amp;lt;/span&amp;gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>garage_door:&lt;/span&gt;
   name: 'Garage door is still OPEN '
   done_message: 'Garage door is CLOSED '
   entity_id: binary_sensor.door_window_sensor_XXXX
@@ -174,40 +174,40 @@ shell_command:
   skip_first: True
   notifiers:
     - steven_phone
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</code></pre></div></div>
 
-&lt;p&gt;In alerts, the ‘name’ is the data that is sent in the alert.  So I get a pushbullet message after 1 minute (and every 1 minute ongoing, curtesy of the ‘repeat’ line) saying that the Garage door is still open, and a time stamp (as pushbullet is sometimes delayed).  Then when the door closes the ‘done_message’ is fired and I get an alert that the door is closed.  The ‘can_acknowledge’ line allows me to dismiss the ongoing alert in the UI.  The ‘notifiers’ section tells the alert what the alert, which is defined in the main configuration.yaml.&lt;/p&gt;</content><author><name>sclarkso@redhat.com</name></author><category term="HASS" /><category term="tech" /><summary type="html">In my previous post I went over basically how to get Home Assistant up and running.  In this post I will document one of the automations I have written.</summary></entry><entry><title type="html">Integrating MyAir with Home Assistant</title><link href="https://sclarkso.github.io/hass/tech/2018/02/26/integrating-myair-with-home-assistant.html" rel="alternate" type="text/html" title="Integrating MyAir with Home Assistant" /><published>2018-02-26T18:51:34-06:00</published><updated>2018-02-26T18:51:34-06:00</updated><id>https://sclarkso.github.io/hass/tech/2018/02/26/integrating-myair-with-home-assistant</id><content type="html" xml:base="https://sclarkso.github.io/hass/tech/2018/02/26/integrating-myair-with-home-assistant.html">&lt;p&gt;The heating and cooling in my new home was controlled by an app running on a cheap android tablet mounted on the wall called &lt;a href=&quot;https://www.advantageair.com.au/product/myair/&quot;&gt;MyAir&lt;/a&gt;.  That tablet is directly wired to a control unit, but you can install an app on other mobile devices (IOS/Android only) that communicate with the tablet to control the air conditioning/heat (and lights if you have that feature; I do not).  The app is limited in the options it provides and I wanted more control over my air conditioning from any device (including PC’s).  I decided to see if this was possible.  I started out planning to write a simple webpage to display the temperatures throughout the house and simply control things, but then decided to leverage an existing project for home automation called “&lt;a href=&quot;https://www.home-assistant.io&quot;&gt;Home Assistant&lt;/a&gt;”  This made it both quicker and easier to integrate with other home automation technology.&lt;/p&gt;
+<p>In alerts, the ‘name’ is the data that is sent in the alert.  So I get a pushbullet message after 1 minute (and every 1 minute ongoing, curtesy of the ‘repeat’ line) saying that the Garage door is still open, and a time stamp (as pushbullet is sometimes delayed).  Then when the door closes the ‘done_message’ is fired and I get an alert that the door is closed.  The ‘can_acknowledge’ line allows me to dismiss the ongoing alert in the UI.  The ‘notifiers’ section tells the alert what the alert, which is defined in the main configuration.yaml.</p>]]></content><author><name>sclarkso@redhat.com</name></author><category term="HASS" /><category term="Tech" /><category term="HASS" /><category term="tech" /><summary type="html"><![CDATA[In my previous post I went over basically how to get Home Assistant up and running.  In this post I will document one of the automations I have written.]]></summary></entry><entry><title type="html">Integrating MyAir with Home Assistant</title><link href="https://sclarkso.github.io/hass/tech/2018/02/26/integrating-myair-with-home-assistant.html" rel="alternate" type="text/html" title="Integrating MyAir with Home Assistant" /><published>2018-02-26T18:51:34-06:00</published><updated>2018-02-26T18:51:34-06:00</updated><id>https://sclarkso.github.io/hass/tech/2018/02/26/integrating-myair-with-home-assistant</id><content type="html" xml:base="https://sclarkso.github.io/hass/tech/2018/02/26/integrating-myair-with-home-assistant.html"><![CDATA[<p>The heating and cooling in my new home was controlled by an app running on a cheap android tablet mounted on the wall called <a href="https://www.advantageair.com.au/product/myair/">MyAir</a>.  That tablet is directly wired to a control unit, but you can install an app on other mobile devices (IOS/Android only) that communicate with the tablet to control the air conditioning/heat (and lights if you have that feature; I do not).  The app is limited in the options it provides and I wanted more control over my air conditioning from any device (including PC’s).  I decided to see if this was possible.  I started out planning to write a simple webpage to display the temperatures throughout the house and simply control things, but then decided to leverage an existing project for home automation called “<a href="https://www.home-assistant.io">Home Assistant</a>”  This made it both quicker and easier to integrate with other home automation technology.</p>
 
-&lt;p&gt;The first thing I needed to do was to see if there was an API and if it was open.  Without both of those, it would be much more difficult to code a solution.  I started by sniffing the traffic from the app on my android phone.  The first step in that process was to get &lt;a href=&quot;https://mitmproxy.org&quot;&gt;mitmproxy&lt;/a&gt; running on my network.  I installed it on an existing raspberry pi on my network.&lt;/p&gt;
+<p>The first thing I needed to do was to see if there was an API and if it was open.  Without both of those, it would be much more difficult to code a solution.  I started by sniffing the traffic from the app on my android phone.  The first step in that process was to get <a href="https://mitmproxy.org">mitmproxy</a> running on my network.  I installed it on an existing raspberry pi on my network.</p>
 
-&lt;p&gt;Installing and running mitmproxy is simple, and covered well here: &lt;a href=&quot;http://docs.mitmproxy.org/en/stable/install.html&quot;&gt;http://docs.mitmproxy.org/en/stable/install.html&lt;/a&gt;&lt;/p&gt;
+<p>Installing and running mitmproxy is simple, and covered well here: <a href="http://docs.mitmproxy.org/en/stable/install.html">http://docs.mitmproxy.org/en/stable/install.html</a></p>
 
-&lt;figure&gt;
-  &lt;a href=&quot;https://sclarkso.github.io/assets/images/screenshot.png&quot;&gt;&lt;img src=&quot;https://sclarkso.github.io/assets/images/screenshot.png&quot; alt=&quot;mitmproxy&quot; /&gt;&lt;/a&gt;
-  &lt;figcaption&gt;mitmproxy&lt;/figcaption&gt;
-&lt;/figure&gt;
+<figure>
+  <a href="https://sclarkso.github.io/assets/images/screenshot.png"><img src="https://sclarkso.github.io/assets/images/screenshot.png" alt="mitmproxy" /></a>
+  <figcaption>mitmproxy</figcaption>
+</figure>
 
-&lt;p&gt;The next stop was to set up that proxy on my android device, and then using the app to change some settings in my Air Conditioning system so I could see the API calls.&lt;/p&gt;
+<p>The next stop was to set up that proxy on my android device, and then using the app to change some settings in my Air Conditioning system so I could see the API calls.</p>
 
-&lt;figure&gt;
-  &lt;a href=&quot;https://sclarkso.github.io/assets/images/mitmsanitized.png&quot;&gt;&lt;img src=&quot;https://sclarkso.github.io/assets/images/mitmsanitized.png&quot; alt=&quot;mitmproxy&quot; /&gt;&lt;/a&gt;
-  &lt;figcaption&gt;mitmproxy&lt;/figcaption&gt;
-&lt;/figure&gt;
+<figure>
+  <a href="https://sclarkso.github.io/assets/images/mitmsanitized.png"><img src="https://sclarkso.github.io/assets/images/mitmsanitized.png" alt="mitmproxy" /></a>
+  <figcaption>mitmproxy</figcaption>
+</figure>
 
-&lt;p&gt;The app uses an API with no authentication, that runs over HTTP.  Because of this I was able to quickly determine the endpoints for displaying the current temperature in every room which was my first goal with this project.&lt;/p&gt;
+<p>The app uses an API with no authentication, that runs over HTTP.  Because of this I was able to quickly determine the endpoints for displaying the current temperature in every room which was my first goal with this project.</p>
 
-&lt;figure&gt;
-  &lt;a href=&quot;https://sclarkso.github.io/assets/images/hass-sanitized1.png&quot;&gt;&lt;img src=&quot;https://sclarkso.github.io/assets/images/hass-sanitized1.png&quot; alt=&quot;HASS GUI&quot; /&gt;&lt;/a&gt;
-  &lt;figcaption&gt;HASS GUI&lt;/figcaption&gt;
-&lt;/figure&gt;
+<figure>
+  <a href="https://sclarkso.github.io/assets/images/hass-sanitized1.png"><img src="https://sclarkso.github.io/assets/images/hass-sanitized1.png" alt="HASS GUI" /></a>
+  <figcaption>HASS GUI</figcaption>
+</figure>
 
-&lt;p&gt;I then got Home Assistant (referred to as ‘HASS’ going forward) up and running on a raspberry pi (which is also running as a DIY google home, https://aiyprojects.withgoogle.com/voice/, giving me the future ability to control HASS with my voice).  There is an image based version of HASS (&lt;a href=&quot;https://home-assistant.io/hassio/installation/&quot;&gt;https://home-assistant.io/hassio/installation/&lt;/a&gt;), designed for raspberry pi’s and this is the easiest way to get HASS up and running.  As I already had lots of software and configuration done on the raspberry pi for different projects, I decided to use python virtual environments instead.  This had the added benefit of giving me more practice working with python virtual environments.  I followed the install guide here: &lt;a href=&quot;https://home-assistant.io/docs/installation/virtualenv/&quot;&gt;https://home-assistant.io/docs/installation/virtualenv/&lt;/a&gt; and was up and running without hassle.&lt;/p&gt;
+<p>I then got Home Assistant (referred to as ‘HASS’ going forward) up and running on a raspberry pi (which is also running as a DIY google home, https://aiyprojects.withgoogle.com/voice/, giving me the future ability to control HASS with my voice).  There is an image based version of HASS (<a href="https://home-assistant.io/hassio/installation/">https://home-assistant.io/hassio/installation/</a>), designed for raspberry pi’s and this is the easiest way to get HASS up and running.  As I already had lots of software and configuration done on the raspberry pi for different projects, I decided to use python virtual environments instead.  This had the added benefit of giving me more practice working with python virtual environments.  I followed the install guide here: <a href="https://home-assistant.io/docs/installation/virtualenv/">https://home-assistant.io/docs/installation/virtualenv/</a> and was up and running without hassle.</p>
 
-&lt;p&gt;I then had to write a custom sensor in order to display this information in HASS and be able to use the information dynamically in other automations and alerts.  HASS configuration is all done in YAML, and the sensor I wrote is written in python (which I have been trying to learn).  Through HASS’s documentation (&lt;a href=&quot;https://home-assistant.io/docs/&quot;&gt;https://home-assistant.io/docs/, https://home-assistant.io/cookbook/&lt;/a&gt;) and other people’s completed sensors (&lt;a href=&quot;https://community.home-assistant.io/&quot;&gt;https://community.home-assistant.io/&lt;/a&gt;, &lt;a href=&quot;https://github.com/search?q=topic%3Ahome-assistant-config&amp;amp;type=Repositories&quot;&gt;https://github.com/search?q=topic%3Ahome-assistant-config&amp;amp;type=Repositories&lt;/a&gt;) I was able to get a working sensor together over the course of a few hours.  I can now see the temperature in every room with a temperate sensor installed, and going forward will be able to automatically adjust the temperature in those rooms based on occupancy, time of day, and any other sensing available to HASS (which is extensive).&lt;/p&gt;
+<p>I then had to write a custom sensor in order to display this information in HASS and be able to use the information dynamically in other automations and alerts.  HASS configuration is all done in YAML, and the sensor I wrote is written in python (which I have been trying to learn).  Through HASS’s documentation (<a href="https://home-assistant.io/docs/">https://home-assistant.io/docs/, https://home-assistant.io/cookbook/</a>) and other people’s completed sensors (<a href="https://community.home-assistant.io/">https://community.home-assistant.io/</a>, <a href="https://github.com/search?q=topic%3Ahome-assistant-config&amp;type=Repositories">https://github.com/search?q=topic%3Ahome-assistant-config&amp;type=Repositories</a>) I was able to get a working sensor together over the course of a few hours.  I can now see the temperature in every room with a temperate sensor installed, and going forward will be able to automatically adjust the temperature in those rooms based on occupancy, time of day, and any other sensing available to HASS (which is extensive).</p>
 
-&lt;figure&gt;
-  &lt;img src=&quot;https://sclarkso.github.io/assets/images/temps.png&quot; alt=&quot;Temps&quot; /&gt;
-  &lt;figcaption&gt;Group of Current Temperatures (in Celsius)&lt;/figcaption&gt;
-&lt;/figure&gt;
+<figure>
+  <img src="https://sclarkso.github.io/assets/images/temps.png" alt="Temps" />
+  <figcaption>Group of Current Temperatures (in Celsius)</figcaption>
+</figure>
 
-&lt;p&gt;That sensor is available here: &lt;a href=&quot;https://github.com/sclarkso/hassio&quot;&gt;https://github.com/sclarkso/hassio&lt;/a&gt;.&lt;/p&gt;</content><author><name>sclarkso260218</name></author><category term="HASS" /><category term="tech" /><summary type="html">The heating and cooling in my new home was controlled by an app running on a cheap android tablet mounted on the wall called MyAir.  That tablet is directly wired to a control unit, but you can install an app on other mobile devices (IOS/Android only) that communicate with the tablet to control the air conditioning/heat (and lights if you have that feature; I do not).  The app is limited in the options it provides and I wanted more control over my air conditioning from any device (including PC’s).  I decided to see if this was possible.  I started out planning to write a simple webpage to display the temperatures throughout the house and simply control things, but then decided to leverage an existing project for home automation called “Home Assistant”  This made it both quicker and easier to integrate with other home automation technology.</summary></entry></feed>
+<p>That sensor is available here: <a href="https://github.com/sclarkso/hassio">https://github.com/sclarkso/hassio</a>.</p>]]></content><author><name>sclarkso260218</name></author><category term="HASS" /><category term="Tech" /><category term="HASS" /><category term="tech" /><summary type="html"><![CDATA[The heating and cooling in my new home was controlled by an app running on a cheap android tablet mounted on the wall called MyAir.  That tablet is directly wired to a control unit, but you can install an app on other mobile devices (IOS/Android only) that communicate with the tablet to control the air conditioning/heat (and lights if you have that feature; I do not).  The app is limited in the options it provides and I wanted more control over my air conditioning from any device (including PC’s).  I decided to see if this was possible.  I started out planning to write a simple webpage to display the temperatures throughout the house and simply control things, but then decided to leverage an existing project for home automation called “Home Assistant”  This made it both quicker and easier to integrate with other home automation technology.]]></summary></entry></feed>
