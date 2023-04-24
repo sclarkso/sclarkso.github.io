@@ -11,7 +11,7 @@
 
   <title>
     
-      Nintendo 35th Anniversary Game and Watch Rattle &middot; Steven's Blog
+      Root Lineage OS 20 on Galaxy Note 9 Using Magisk &middot; Steven's Blog
     
   </title>
 
@@ -200,11 +200,11 @@
 
     <main class="container">
       <header>
-  <h1 class="post-title">Nintendo 35th Anniversary Game and Watch Rattle</h1>
+  <h1 class="post-title">Root Lineage OS 20 on Galaxy Note 9 Using Magisk</h1>
 </header>
 <div class="content">
   <div class="post-meta">
-  <span class="post-date">17 Nov 2020</span>
+  <span class="post-date">23 Apr 2023</span>
   <span class="post-categories">
     
       &bull;
@@ -221,9 +221,19 @@
 </div>
 
   <div class="post-body">
-    <p>I recently got my new Game and Watch.  After using it for a few days I noticed it had a rattle.  I dissassembled it to see if I could repair it.  It turned out to be the power button.  So I left it as it was.</p>
+    <p>None of the guides I could find on the internet worked for installing the patched boot image that magisk creates on a Galaxy Note 9 running LineageOS 20.  I found a solution; <a href="https://github.com/Benjamin-Dobell/Heimdall">heimdall</a>, which you probably used to install lineage in the first place.</p>
 
-<p><img src="/assets/images/gaw.PNG" alt="game_and_watch" /></p>
+<p>Once you have the patched boot image from magisk, just flash it using heimdall instead of fastboot:</p>
+
+<p>Put phone in download mode (can be done from lineage recovery by choosing “bootloader”, alternatively you can hold down several buttons at the same time (volume down + bixby + power while plugging in a usb I think?)),</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./heimdall flash --BOOT /tmp/magisk_patched-26100_kPXYn.img --no-reboot
+</code></pre></div></div>
+
+<p>Reboot and enjoy Magisk.</p>
+
+<p>Also while this worked for me I make no guarantees. I was doing this on a test, spare phone, with no data I was worried about losing.  Always have a backup.</p>
+
 
     
 
@@ -274,9 +284,9 @@
   *  https://disqus.com/admin/universalcode/#configuration-variables
   */
   var disqus_config = function () {
-    this.page.url = "https://sclarkso.github.io/tech/2020/11/17/game-and-watch-rattle.html";
+    this.page.url = "https://sclarkso.github.io/tech/2023/04/23/note-9-lineage-magisk-root.html";
     this.page.identifier = "" ||
-                           "https://sclarkso.github.io/tech/2020/11/17/game-and-watch-rattle.html";
+                           "https://sclarkso.github.io/tech/2023/04/23/note-9-lineage-magisk-root.html";
   }
   function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');
@@ -300,18 +310,18 @@
     
       <li>
         <h3>
-          <a href="/tech/2023/04/23/note-9-lineage-magisk-root.html">
-            Root Lineage OS 20 on Galaxy Note 9 Using Magisk
-            <small>23 Apr 2023</small>
+          <a href="/tech/2021/10/05/quest-2-timezone-change-without-factory-reset.html">
+            Change Quest 2 Timezone without Factory Reset using ADB
+            <small>05 Oct 2021</small>
           </a>
         </h3>
       </li>
     
       <li>
         <h3>
-          <a href="/tech/2021/10/05/quest-2-timezone-change-without-factory-reset.html">
-            Change Quest 2 Timezone without Factory Reset using ADB
-            <small>05 Oct 2021</small>
+          <a href="/tech/2020/11/17/game-and-watch-rattle.html">
+            Nintendo 35th Anniversary Game and Watch Rattle
+            <small>17 Nov 2020</small>
           </a>
         </h3>
       </li>
